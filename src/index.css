@@ -1,0 +1,163 @@
+:root {
+  --bg-principal: #0d1117;
+  --bg-tarjeta: #161b22;
+  --borde-tarjeta: #30363d;
+  --texto-brillante: #f0f6fc;
+  --texto-apagado: #8b949e;
+  --color-neon-azul: #58a6ff;
+  --color-neon-verde: #238636;
+  --color-neon-rojo: #da3637;
+}
+
+body {
+  background-color: var(--bg-principal);
+  color: var(--texto-brillante);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.contenedor_formulario {
+  background: var(--bg-tarjeta);
+  border: 1px solid var(--borde-tarjeta);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contenedor_formulario label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-neon-azul);
+}
+
+.contenedor_formulario textarea {
+  background: var(--bg-principal);
+  border: 1px solid var(--borde-tarjeta);
+  border-radius: 8px;
+  color: var(--texto-brillante);
+  padding: 0.8rem;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: none;
+  transition: border-color 0.2s;
+}
+
+.contenedor_formulario textarea:focus {
+  outline: none;
+  border-color: var(--color-neon-azul);
+}
+
+button {
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  transition:
+    filter 0.2s,
+    transform 0.1s;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.contenedor_formulario button:nth-of-type(1) {
+  background: var(--color-neon-azul);
+  color: #fff;
+}
+
+.contenedor_formulario button:nth-of-type(2) {
+  background: transparent;
+  color: var(--color-neon-rojo);
+  border: 1px solid var(--color-neon-rojo);
+  align-self: flex-start;
+}
+
+button:hover {
+  filter: brightness(1.2);
+}
+
+.contenedor_lista {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.lista_completada_false,
+.lista_completada_true {
+  flex: 1;
+  background: var(--bg-tarjeta);
+  border: 1px solid var(--borde-tarjeta);
+  border-radius: 12px;
+  padding: 1.5rem;
+  min-height: 300px;
+}
+
+.lista_completada_false h3 {
+  color: #e3b341;
+  border-bottom: 2px solid #e3b341;
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.lista_completada_true h3 {
+  color: var(--color-neon-verde);
+  border-bottom: 2px solid var(--color-neon-verde);
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.ficha_tarea {
+  background: var(--bg-principal);
+  border: 1px solid var(--borde-tarjeta);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  animation: aparecer 0.3s ease;
+}
+
+.ficha_tarea p {
+  margin: 0;
+  flex: 1;
+  font-size: 1rem;
+  word-break: break-word;
+}
+
+.lista_completada_true .ficha_tarea p {
+  text-decoration: line-through;
+  color: var(--texto-apagado);
+}
+
+.ficha_tarea button {
+  background: #21262d;
+  border: 1px solid var(--borde-tarjeta);
+  padding: 0.4rem;
+  font-size: 1rem;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
