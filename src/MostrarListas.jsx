@@ -34,7 +34,7 @@ export function MostrarListas({
           })}
       </div>
       <div className="lista_completada_true">
-        <h3>Lista de No completadas</h3>
+        <h3>Lista de Completadas</h3>
         {lista_filtrar
           .filter((tarea_filtro) => tarea_filtro.completada === true)
           .map((tarea) => {
